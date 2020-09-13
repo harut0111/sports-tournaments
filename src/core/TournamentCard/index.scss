@@ -1,0 +1,28 @@
+.tournaments-option {
+  width: 420px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  &-content {
+    display: flex;
+  }
+  &-description {
+    padding-left: 10px;
+    width: 87%;
+  }
+  &-title {
+    font-size: 15px;
+    margin: 0 0 5px;
+  }
+  &-text {
+    text-indent: 20px;
+    margin: 0;
+    color: #9e9e9e;
+  }
+  &-btn-close {
+    position: absolute !important;
+    top: -6px;
+    right: -6px;
+    background: #ccc;
+  }
+}

@@ -9,9 +9,8 @@ export default function SavedItems() {
   const [{ savedTournaments }, dispatch] = useStateValue();
 
   const handleOnRemoveClick = (id) => {
-    const savedTournamentsClone = { ...savedTournaments };
-    delete savedTournamentsClone[id];
-    dispatch(removeTournament(savedTournamentsClone));
+    const { [id]: value, ...rest } = savedTournaments;
+    dispatch(removeTournament(rest));
   };
 
   return (

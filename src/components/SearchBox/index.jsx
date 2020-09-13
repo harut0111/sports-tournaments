@@ -33,13 +33,14 @@ export default function SearchBox() {
   };
 
   const renderOption = (option) => {
-    const imgSrc = option.images ? option.images.default?.filePath : "";
+    const imgSrc = option.images?.default?.filePath;
     return (
       <React.Fragment>
         <TournamentCard
           imgSrc={imgSrc}
           title={option.title}
           description={option.description}
+          showRemoveBnt={false}
         />
       </React.Fragment>
     );
@@ -48,7 +49,7 @@ export default function SearchBox() {
   const handleOnChange = (tournament) => {
     if (tournament) {
       const { description, id, images, title } = tournament;
-      const imgSrc = images.default.filePath;
+      const imgSrc = images?.default?.filePath;
       if (id in savedTournaments) alert("already saved");
       else {
         const data = { [id]: { description, imgSrc, title } };

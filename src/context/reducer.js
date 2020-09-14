@@ -1,7 +1,11 @@
 import { SAVE_TOURNAMENT, REMOVE_TOURNAMENT } from "./actions";
 
+const savedTournaments = localStorage.savedTournaments
+  ? JSON.parse(localStorage.savedTournaments)
+  : {};
+
 export const initialState = {
-  savedTournaments: JSON.parse(localStorage.savedTournaments),
+  savedTournaments
 };
 
 export const reducer = (state, { type, payload }) => {
@@ -11,13 +15,13 @@ export const reducer = (state, { type, payload }) => {
       localStorage.savedTournaments = JSON.stringify(savedTournaments);
       return {
         ...state,
-        savedTournaments,
+        savedTournaments
       };
     case REMOVE_TOURNAMENT:
       localStorage.savedTournaments = JSON.stringify({ ...payload });
       return {
         ...state,
-        savedTournaments: { ...payload },
+        savedTournaments: { ...payload }
       };
     default:
       return state;

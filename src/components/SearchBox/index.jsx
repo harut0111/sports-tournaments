@@ -12,14 +12,14 @@ export default function SearchBox() {
   const [isLoading, setLoading] = React.useState(false);
 
   const fetchTournaments = async (event) => {
-    const value = event.target.value.trim().toLowerCase();
-
+    const value = event.target.value;
+    if(value.length < 2) return
     try {
       setLoading(true);
       const response = await fetch(
         `https://api-search.win.gg/search?q=${value}&index=tournament`
       );
-
+      
       const result = await response.json();
       if (result.length) {
         const tournaments = result[0].documents;
@@ -70,7 +70,7 @@ export default function SearchBox() {
       renderInput={(params) => (
         <TextField
           {...params}
-          onChange={fetchTournaments}
+          onChange={(event) => fetchTournaments(event)}
           label="Type here to search tournaments"
           variant="outlined"
         />

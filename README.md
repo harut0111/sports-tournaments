@@ -1,4 +1,4 @@
-[Task Link](https://github.com/harut0111/private-repo/blob/master/Priotix_React.js%20Technical%20Assignment.pdf).<br />
+[:notebook:](https://github.com/harut0111/private-repo/blob/master/sport_tournaments.pdf)<br/><br/>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
